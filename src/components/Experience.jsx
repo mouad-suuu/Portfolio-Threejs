@@ -1,8 +1,11 @@
-import React from "react";
+import React from 'react';
 
 const Experience = () => {
   return (
-  <div>Experience</div>
+    <div>
+      <h2>Experience Component</h2>
+      {/* Add your content here */}
+    </div>
   );
 };
 
