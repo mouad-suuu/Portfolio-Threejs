@@ -19,10 +19,10 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
-  tripguide,
+  AirBnB,
+  portfolio,
   threejs,
+  shell,
 } from "../assets";
 
 export const navLinks = [
@@ -46,7 +46,7 @@ const services = [
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Low-level Developer",
     icon: mobile,
   },
   {
@@ -54,7 +54,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Project manager",
     icon: creator,
   },
 ];
@@ -198,67 +198,67 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "AirBnB clone",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "I've built an AirBnB clone using Flask, focusing on RESTful API development. With expertise in Flask and comprehensive unit testing, I've crafted efficient endpoints for managing amenities, cities, places, and users. This project demonstrates my proficiency in back-end development and my ability to create scalable and robust web applications.",
     tags: [
       {
-        name: "react",
+        name: "MySQL",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "javascript",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Flask",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: AirBnB,
+    source_code_link: "https://github.com/mouad-suuu/AirBnB_clone_v3",
   },
   {
-    name: "Job IT",
+    name: "Simple Shell",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Simple Shell is a lightweight command-line interpreter written in C for UNIX-based operating systems. It allows users to execute commands, manage processes, and navigate directories seamlessly. With its minimalistic design and intuitive interface, Simple Shell provides a fundamental tool for understanding the basics of shell scripting and operating system interactions.",
     tags: [
       {
-        name: "react",
+        name: "C",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "DATA_Strucute",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "Algorithms",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: shell,
+    source_code_link: "https://github.com/NabilM5/simple_shell",
   },
   {
-    name: "Trip Guide",
+    name: "3D portfolio",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "In this portfolio project, I embarked on a journey to enhance my front-end skills by leveraging cutting-edge technologies to create a visually stunning portfolio.",
     tags: [
       {
-        name: "nextjs",
+        name: "Vite.js",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Three.js",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "TailwindCss",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: portfolio,
+    source_code_link: "https://github.com/mouad-suuu/Portfolio-Threejs",
   },
 ];
 
