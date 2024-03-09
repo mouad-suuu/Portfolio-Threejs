@@ -21,10 +21,10 @@ import tailwind from "./tech/tailwind.png";
 import Nginx from "./tech/Nginx.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import self from "./company/self-learnnig.png";
+import google from "./company/google.png";
+import Fst from "./company/Fst.png";
+import ALX from "./company/ALX.png";
 
 import AirBnB from "./AirBnB.png";
 import shell from "./shell.png";
@@ -56,10 +56,10 @@ export {
   tailwind,
   Nginx,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  ALX,
+  Fst,
+  google,
+  self,
   AirBnB,
   shell,
   portfolio,
