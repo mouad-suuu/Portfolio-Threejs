@@ -16,9 +16,9 @@ import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
+import MySQL from "./tech/MySQL.png";
 import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
+import Nginx from "./tech/Nginx.png";
 import threejs from "./tech/threejs.svg";
 
 import meta from "./company/meta.png";
@@ -29,6 +29,10 @@ import tesla from "./company/tesla.png";
 import AirBnB from "./AirBnB.png";
 import shell from "./shell.png";
 import portfolio from "./portfolio.png";
+
+import ayoub from "./ayoub.png";
+import othman from "./othman.png";
+import menobeard from "./menobeard.png";
 
 export {
   logo,
@@ -48,9 +52,9 @@ export {
   mongodb,
   nodejs,
   reactjs,
-  redux,
+  MySQL,
   tailwind,
-  typescript,
+  Nginx,
   threejs,
   meta,
   shopify,
@@ -59,4 +63,7 @@ export {
   AirBnB,
   shell,
   portfolio,
+  ayoub,
+  othman,
+  menobeard,
 };

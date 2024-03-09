@@ -4,11 +4,11 @@ import {
   creator,
   web,
   javascript,
-  typescript,
+  Nginx,
   html,
   css,
   reactjs,
-  redux,
+  MySQL,
   tailwind,
   nodejs,
   mongodb,
@@ -23,6 +23,9 @@ import {
   portfolio,
   threejs,
   shell,
+  ayoub,
+  othman,
+  menobeard,
 } from "../assets";
 
 export const navLinks = [
@@ -73,16 +76,16 @@ const technologies = [
     icon: javascript,
   },
   {
-    name: "TypeScript",
-    icon: typescript,
+    name: "MySQL",
+    icon: MySQL,
   },
   {
     name: "React JS",
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "Nginx",
+    icon: Nginx,
   },
   {
     name: "Tailwind CSS",
@@ -172,27 +175,26 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
+      "I thought it was impossible to make a website as beautiful as our product, but Mouad proved me wrong.",
+    name: "Othman the titan",
     designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    company: "BENI MELLAL",
+    image: othman,
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+      "I've never met a web developer who truly cares about their clients' success like Mouad does.",
+    name: "Ayoub bald version",
+    designation: "CFO",
+    company: "ENSAF",
+    image: ayoub,
   },
   {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
+    testimonial: "Damn i'am good!",
+    name: "me no beard",
     designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    company: "FSTF",
+    image: menobeard,
   },
 ];
 
