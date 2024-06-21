@@ -31,3 +31,34 @@ body {
     text-wrap: balance;
   }
 }
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #312e2e;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #085a6ea1;
+  border-radius: 14px;
+  width: 10px;
+  height: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #045851;
+}
+/* Up button */
+::-webkit-scrollbar-button:start {
+  background-color: #045851;
+}
+
+/* Down button */
+::-webkit-scrollbar-button:end {
+  background-color: #045851;
+}

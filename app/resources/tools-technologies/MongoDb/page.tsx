@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Documentation from "@/components/component/Documentation";
-import { data } from "./python";
+import { data } from "./mongodb";
 
 const App: React.FC = () => {
   return (
