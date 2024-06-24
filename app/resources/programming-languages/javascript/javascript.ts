@@ -1281,10 +1281,8 @@ console.log(fruits); // Output: ['apple', 'grape', 'orange']`,
       {
         type: "section",
         section: {
-          mainTitle:
-            "Destructuring, Spread Operator, and Error Handling in JavaScript",
-          section:
-            "Destructuring, Spread Operator, and Error Handling in JavaScript",
+          mainTitle: "Destructuring, Spread Operator",
+          section: "Destructuring, Spread Operator",
           items: [
             {
               type: "subtitle",
