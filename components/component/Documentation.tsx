@@ -16,13 +16,15 @@ interface DocumentationItem {
     | "semi-title"
     | "paragraph"
     | "code"
-    | "link";
+    | "link"
+    | "section";
   text?: string;
   code?: {
     language: string;
     code: string;
   };
   url?: string;
+  section?: DocumentationSection; // Add nested sections
 }
 
 export interface DocumentationSection {
@@ -38,6 +40,60 @@ interface DocumentationProps {
 const Documentation: React.FC<DocumentationProps> = ({
   data,
 }: DocumentationProps) => {
+  const renderItems = (items: DocumentationItem[]) => {
+    return items.map((item, itemIndex) => (
+      <div key={itemIndex} className="relative">
+        {item.type === "title" && (
+          <h1 className="text-2xl font-bold">{item.text}</h1>
+        )}
+        {item.type === "language" && (
+          <p className="font-semibold text-lg text-blue-600">{item.text}</p>
+        )}
+        {item.type === "subtitle" && (
+          <h2 className="text-lg font-semibold">{item.text}</h2>
+        )}
+        {item.type === "semi-title" && (
+          <h3 className="text-lg font-medium">{item.text}</h3>
+        )}
+        {item.type === "paragraph" && (
+          <p className="text-gray-700">{item.text}</p>
+        )}
+        {item.type === "code" && item.code && (
+          <div className="relative">
+            <SyntaxHighlighter
+              language={item.code.language}
+              style={anOldHope}
+              className="rounded-lg"
+            >
+              {item.code.code || ""}
+            </SyntaxHighlighter>
+            <div className="absolute top-0 right-0 mt-2 mr-2">
+              <CopyButton text={item.code.code || ""} />
+            </div>
+          </div>
+        )}
+        {item.type === "link" && (
+          <a href={item.url} className="text-blue-600 hover:underline">
+            {item.text}
+          </a>
+        )}
+        {item.type === "section" && item.section && (
+          <div className="mt-4">
+            <Collapsible className="border rounded-lg overflow-hidden">
+              <CollapsibleTrigger className="bg-muted px-6 py-4 flex items-center justify-between font-medium">
+                <span>{item.section.section}</span>
+                <ChevronDownIcon className="w-5 h-5" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="p-6 space-y-4">
+                {renderItems(item.section.items)}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
+      </div>
+    ));
+  };
+
   return (
     <div className="container mx-auto py-12 px-4 md:px-6">
       {data.map((section, sectionIndex) => (
@@ -51,49 +107,7 @@ const Documentation: React.FC<DocumentationProps> = ({
               <ChevronDownIcon className="w-5 h-5" />
             </CollapsibleTrigger>
             <CollapsibleContent className="p-6 space-y-4">
-              {section.items.map((item, itemIndex) => (
-                <div key={itemIndex} className="relative">
-                  {item.type === "title" && (
-                    <h1 className="text-2xl font-bold">{item.text}</h1>
-                  )}
-                  {item.type === "language" && (
-                    <p className="font-semibold text-lg text-blue-600">
-                      {item.text}
-                    </p>
-                  )}
-                  {item.type === "subtitle" && (
-                    <h2 className="text-lg font-semibold">{item.text}</h2>
-                  )}
-                  {item.type === "semi-title" && (
-                    <h3 className="text-lg font-medium">{item.text}</h3>
-                  )}
-                  {item.type === "paragraph" && (
-                    <p className="text-gray-700">{item.text}</p>
-                  )}
-                  {item.type === "code" && item.code && (
-                    <div className="relative">
-                      <SyntaxHighlighter
-                        language={item.code.language}
-                        style={anOldHope}
-                        className="rounded-lg"
-                      >
-                        {item.code.code || ""}
-                      </SyntaxHighlighter>
-                      <div className="absolute top-0 right-0 mt-2 mr-2">
-                        <CopyButton text={item.code.code || ""} />
-                      </div>
-                    </div>
-                  )}
-                  {item.type === "link" && (
-                    <a
-                      href={item.url}
-                      className="text-blue-600 hover:underline"
-                    >
-                      {item.text}
-                    </a>
-                  )}
-                </div>
-              ))}
+              {renderItems(section.items)}
             </CollapsibleContent>
           </Collapsible>
         </div>
