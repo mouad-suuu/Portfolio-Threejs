@@ -1488,4 +1488,354 @@ console.log(merged); // Output: { x: 1, y: 2, z: 3 }`,
       },
     ],
   },
+  {
+    mainTitle: "Intermediate JavaScript",
+    section: "Intermediate JavaScript",
+    items: [
+      {
+        type: "section",
+        section: {
+          mainTitle: "Closures  in JavaScript",
+          section: "Closures in JavaScript",
+          items: [
+            {
+              type: "VLink",
+              text: "JavaScript video",
+              url: "https://www.youtube.com/watch?v=vKJpN5FAeF4&ab_channel=Fireship",
+            },
+            {
+              type: "paragraph",
+              text: "A closure is the combination of a function and the lexical environment within which that function was declared. Closures allow functions to access variables from their outer scope even after the outer function has finished executing.",
+            },
+
+            {
+              type: "subtitle",
+              text: "Creating Closures",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `function outerFunction() {
+    const outerVariable = 'I am from the outer function';
+
+    function innerFunction() {
+        console.log(outerVariable); // Inner function has access to outerVariable
+    }
+
+    return innerFunction;
+}
+
+const innerFunc = outerFunction(); // innerFunc now holds the innerFunction
+
+// Even though outerFunction has finished executing, innerFunc maintains access to outerVariable
+innerFunc(); // Output: "I am from the outer function"
+`,
+              },
+            },
+            {
+              type: "title",
+              text: "Practical Use Cases of Closures",
+            },
+            {
+              type: "subtitle",
+              text: "1.Encapsulation:",
+            },
+            {
+              type: "paragraph",
+              text: "Closures allow for the encapsulation of private variables within a function's scope, providing data privacy and preventing external access.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `function createCounter() {
+    let count = 0;
+
+    return function() {
+        return ++count;
+    };
+}
+
+const counter = createCounter();
+
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+console.log(counter()); // Output: 3
+`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "2.Partial Application and Currying:",
+            },
+            {
+              type: "paragraph",
+              text: " Closures can be used to create partially applied functions or curried functions, where some of the arguments are preset.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `function multiply(a) {
+    return function(b) {
+        return a * b;
+    };
+}
+
+const double = multiply(2); // Create a function that doubles its argument
+console.log(double(5)); // Output: 10
+console.log(double(10)); // Output: 20
+`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "3.Module Pattern:",
+            },
+            {
+              type: "paragraph",
+              text: "Closures enable the implementation of the module pattern, allowing for the creation of private and public methods and variables.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `const module = (function() {
+    let privateVariable = 'I am private';
+
+    function privateMethod() {
+        console.log(privateVariable);
+    }
+
+    return {
+        publicMethod: function() {
+            privateMethod();
+        }
+    };
+})();
+
+module.publicMethod(); // Output: "I am private"
+`,
+              },
+            },
+            {
+              type: "title",
+              text: "Benefits of Closures",
+            },
+            {
+              type: "subtitle",
+              text: "Data Encapsulation and Privacy",
+            },
+            {
+              type: "subtitle",
+              text: "Function Currying and Partial Application",
+            },
+            {
+              type: "subtitle",
+              text: "Module Pattern for Better Code Organization",
+            },
+            {
+              type: "title",
+              text: "Conclusion",
+            },
+            {
+              type: "paragraph",
+              text: "Closures are a powerful and versatile feature of JavaScript, allowing functions to retain access to their lexical scope even after their outer function has finished executing. Understanding closures is essential for writing clean, efficient, and modular JavaScript code. By mastering closures, you'll be better equipped to create reusable components, implement design patterns, and build scalable applications.",
+            },
+          ],
+        },
+      },
+      {
+        type: "section",
+        section: {
+          mainTitle: "Prototypes and Prototypal Inheritance in JavaScript",
+          section: "Prototypes and Prototypal Inheritance in JavaScript",
+          items: [
+            {
+              type: "VLink",
+              text: "Inheritance in JavaScript - Prototypal Inheritance tutorial",
+              url: "https://www.youtube.com/watch?v=jnME98ckDbQ&ab_channel=ColorCode",
+            },
+            {
+              type: "paragraph",
+              text: "JavaScript uses prototypes to implement inheritance and the sharing of properties and methods between objects. Understanding prototypes and prototypal inheritance is crucial for effective object-oriented programming in JavaScript.",
+            },
+            {
+              type: "title",
+              text: "Prototypes",
+            },
+            {
+              type: "paragraph",
+              text: "Every JavaScript object has a prototype. A prototype is also an object, and it acts as a template from which other objects inherit properties and methods.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+Person.prototype.greet = function() {
+    console.log(\`Hello, my name is \${this.name}\`);
+};
+
+const john = new Person('John', 30);
+john.greet(); // Output: "Hello, my name is John"`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "In the example above:",
+            },
+            {
+              type: "paragraph",
+              text: "Person is a constructor function.",
+            },
+            {
+              type: "paragraph",
+              text: "Person.prototype is the prototype object where the greet method is defined.",
+            },
+            {
+              type: "paragraph",
+              text: "Instances of Person like john have access to the greet method via their prototype.",
+            },
+            {
+              type: "title",
+              text: "Prototypal Inheritance",
+            },
+            {
+              type: "paragraph",
+              text: "Prototypal inheritance is a mechanism by which an object can inherit properties and methods from another object.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `function Employee(name, age, jobTitle) {
+    Person.call(this, name, age);
+    this.jobTitle = jobTitle;
+}
+
+Employee.prototype = Object.create(Person.prototype);
+Employee.prototype.constructor = Employee;
+
+Employee.prototype.describeJob = function() {
+    console.log(\`I am a \${this.jobTitle}\`);
+};
+
+const jane = new Employee('Jane', 28, 'Software Developer');
+jane.greet(); // Output: "Hello, my name is Jane"
+jane.describeJob(); // Output: "I am a Software Developer"`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "In the example above:",
+            },
+            {
+              type: "paragraph",
+              text: "Employee inherits from Person.",
+            },
+            {
+              type: "paragraph",
+              text: "Object.create(Person.prototype) creates a new object with Person.prototype as its prototype.",
+            },
+            {
+              type: "paragraph",
+              text: "Employee.prototype.constructor is set to Employee to ensure the correct constructor reference.",
+            },
+            {
+              type: "title",
+              text: "Understanding the Prototype Chain",
+            },
+            {
+              type: "paragraph",
+              text: "The prototype chain is the series of links between an object and its prototype. When a property or method is accessed on an object, JavaScript first looks for it on the object itself. If it’s not found, the search continues up the prototype chain until the property is found or the end of the chain is reached.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `console.log(jane.hasOwnProperty('name')); // Output: true
+console.log(jane.hasOwnProperty('greet')); // Output: false
+console.log(jane.__proto__.hasOwnProperty('greet')); // Output: true`,
+              },
+            },
+            {
+              type: "title",
+              text: "ES6 Classes and Prototypes",
+            },
+            {
+              type: "paragraph",
+              text: "ES6 introduced a new syntax for creating classes, which simplifies the creation of constructor functions and inheritance.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log(\`Hello, my name is \${this.name}\`);
+    }
+}
+
+class Employee extends Person {
+    constructor(name, age, jobTitle) {
+        super(name, age);
+        this.jobTitle = jobTitle;
+    }
+
+    describeJob() {
+        console.log(\`I am a \${this.jobTitle}\`);
+    }
+}
+
+const john = new Employee('John', 30, 'Software Developer');
+john.greet(); // Output: "Hello, my name is John"
+john.describeJob(); // Output: "I am a Software Developer"`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "In the example above:",
+            },
+            {
+              type: "paragraph",
+              text: "class syntax is used to define Person and Employee.",
+            },
+            {
+              type: "paragraph",
+              text: "extends keyword is used to set up inheritance.",
+            },
+            {
+              type: "paragraph",
+              text: "super keyword is used to call the constructor of the parent class.",
+            },
+            {
+              type: "title",
+              text: "Conclusion",
+            },
+            {
+              type: "paragraph",
+              text: "Understanding prototypes and prototypal inheritance is essential for mastering JavaScript's object-oriented programming capabilities. By leveraging prototypes, you can create efficient, reusable, and maintainable code. The introduction of ES6 classes provides a more straightforward syntax for working with prototypes and inheritance, but it's important to understand the underlying mechanics to fully utilize JavaScript's prototypal nature.",
+            },
+          ],
+        },
+      },
+      // {
+      //   type: "section",
+      //   section:{
+
+      //   }
+      // }
+    ],
+  },
 ];
