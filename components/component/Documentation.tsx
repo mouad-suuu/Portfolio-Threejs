@@ -17,6 +17,7 @@ interface DocumentationItem {
     | "paragraph"
     | "code"
     | "link"
+    | "VLink"
     | "section";
   text?: string;
   code?: {
@@ -40,6 +41,13 @@ interface DocumentationProps {
 const Documentation: React.FC<DocumentationProps> = ({
   data,
 }: DocumentationProps) => {
+  const extractYouTubeVideoId = (url: string) => {
+    const regex =
+      /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  };
+
   const renderItems = (items: DocumentationItem[]) => {
     return items.map((item, itemIndex) => (
       <div key={itemIndex} className="relative">
@@ -73,9 +81,29 @@ const Documentation: React.FC<DocumentationProps> = ({
           </div>
         )}
         {item.type === "link" && (
-          <a href={item.url} className="text-blue-600 hover:underline">
+          <a
+            href={item.url}
+            className="text-blue-600 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {item.text}
           </a>
+        )}
+        {item.type === "VLink" && (
+          <div className="video-container flex items-center justify-center">
+            <iframe
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${extractYouTubeVideoId(
+                item.url || ""
+              )}`}
+              title={item.text}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         )}
         {item.type === "section" && item.section && (
           <div className="mt-4">
