@@ -1830,12 +1830,200 @@ john.describeJob(); // Output: "I am a Software Developer"`,
           ],
         },
       },
-      // {
-      //   type: "section",
-      //   section:{
+      {
+        type: "section",
+        section: {
+          mainTitle: "Asynchronous JavaScript Explained",
+          section: "Asynchronous JavaScript",
+          items: [
+            {
+              type: "VLink",
+              text: "Async JavaScript & Callback Functions -- Tutorial for Beginners",
+              url: "https://www.youtube.com/watch?v=QSqc6MMS6Fk&ab_channel=ColorCode",
+            },
+            {
+              type: "paragraph",
+              text: "Asynchronous JavaScript is integral to web development, facilitating tasks like data fetching, user input handling, and UI updates without blocking the main thread. JavaScript offers several tools for asynchronous programming, including callbacks, promises, and async/await, each with its own advantages and use cases. Let's delve into how these mechanisms work behind the scenes in the JavaScript runtime:",
+            },
+            {
+              type: "title",
+              text: "Callbacks",
+            },
+            {
+              type: "paragraph",
+              text: "Callbacks are functions passed as arguments to other functions, executed asynchronously upon task or event completion. When a function with a callback is invoked, it's added to the call stack. Once the associated task completes, the callback is queued in the event queue. The event loop continuously checks the call stack and event queue, moving callbacks from the latter to the former for execution when the call stack is empty.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `function fetchData(url, callback) {
+    // Simulate fetching data from a server
+    setTimeout(() => {
+        const data = { name: 'John', age: 30 };
+        callback(data);
+    }, 1000);
+}
 
-      //   }
-      // }
+function processData(data) {
+    console.log('Data received:', data);
+}
+
+fetchData('https://example.com/api/data', processData);`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "Behind the scenes:",
+            },
+            {
+              type: "paragraph",
+              text: "When fetchData is called, it's added to the call stack.",
+            },
+            {
+              type: "paragraph",
+              text: "Inside fetchData, the setTimeout function is encountered, which schedules the callback function after 1 second.",
+            },
+            {
+              type: "paragraph",
+              text: "fetchData completes its execution and is removed from the call stack.",
+            },
+            {
+              type: "paragraph",
+              text: "After 1 second, the callback function processData is pushed to the event queue.",
+            },
+            {
+              type: "paragraph",
+              text: "The event loop checks the call stack and finds it empty, so it moves processData from the event queue to the call stack for execution.",
+            },
+            {
+              type: "title",
+              text: "Promises",
+            },
+            {
+              type: "paragraph",
+              text: "Promises represent the eventual completion or failure of an asynchronous operation, offering a structured approach to asynchronous programming. When a promise is created, it enters a pending state. Upon completion of the asynchronous operation, the promise transitions to either a fulfilled (resolved) or rejected state. Then, corresponding then or catch handlers are queued in the microtask queue. The event loop picks up these handlers, executing them in the order they were queued.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `function fetchData(url) {
+    return new Promise((resolve, reject) => {
+        // Simulate fetching data from a server
+        setTimeout(() => {
+            const data = { name: 'John', age: 30 };
+            resolve(data);
+        }, 1000);
+    });
+}
+
+fetchData('https://example.com/api/data')
+    .then(data => {
+        console.log('Data received:', data);
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "Behind the scenes:",
+            },
+            {
+              type: "paragraph",
+              text: "When fetchData is called, it returns a promise which enters the pending state.",
+            },
+            {
+              type: "paragraph",
+              text: "Inside the promise executor function, the setTimeout function is encountered, scheduling the resolution of the promise after 1 second.",
+            },
+            {
+              type: "paragraph",
+              text: "After 1 second, the promise resolves with the data { name: 'John', age: 30 }.",
+            },
+            {
+              type: "paragraph",
+              text: "The then handler is queued in the microtask queue.",
+            },
+            {
+              type: "paragraph",
+              text: "The event loop picks up the then handler and executes it, logging the received data.",
+            },
+            {
+              type: "title",
+              text: "Async/Await",
+            },
+            {
+              type: "paragraph",
+              text: "Async/await simplifies asynchronous code by allowing it to resemble synchronous code, built upon promises. Async functions return promises, with the await keyword suspending execution until promise settlement. Behind the scenes, when await is encountered, the JavaScript engine pauses the async function's execution, awaiting promise resolution. This synchronous-like behavior enhances code readability and maintainability.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "javascript",
+                code: `async function fetchData(url) {
+    return new Promise((resolve, reject) => {
+        // Simulate fetching data from a server
+        setTimeout(() => {
+            const data = { name: 'John', age: 30 };
+            resolve(data);
+        }, 1000);
+    });
+}
+
+async function getData() {
+    try {
+        const data = await fetchData('https://example.com/api/data');
+        console.log('Data received:', data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+getData();`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "Behind the scenes:",
+            },
+            {
+              type: "paragraph",
+              text: "When getData is called, it's added to the call stack.",
+            },
+            {
+              type: "paragraph",
+              text: "Inside getData, the await keyword suspends execution until the promise returned by fetchData is settled.",
+            },
+            {
+              type: "paragraph",
+              text: "fetchData returns a promise which resolves after 1 second.",
+            },
+            {
+              type: "paragraph",
+              text: "Once resolved, the data is assigned to const data.",
+            },
+            {
+              type: "paragraph",
+              text: "The code after await resumes execution, logging the received data.",
+            },
+            {
+              type: "paragraph",
+              text: "If an error occurs during promise resolution, the catch block handles it.",
+            },
+            {
+              type: "title",
+              text: "Conclusion",
+            },
+            {
+              type: "paragraph",
+              text: "In summary, callbacks, promises, and async/await facilitate asynchronous programming in JavaScript, each offering distinct advantages. Understanding their inner workings—callbacks' event-driven nature, promises' state transitions and microtask queue handling, and async/await's promise-based approach—empowers developers to write efficient, readable, and maintainable asynchronous JavaScript code.",
+            },
+          ],
+        },
+      },
     ],
   },
 ];
