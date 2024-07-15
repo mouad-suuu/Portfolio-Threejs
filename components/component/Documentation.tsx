@@ -106,9 +106,9 @@ const Documentation: React.FC<DocumentationProps> = ({
           </div>
         )}
         {item.type === "section" && item.section && (
-          <div className="mt-4">
+          <div className="mt-0">
             <Collapsible className="border rounded-lg overflow-hidden">
-              <CollapsibleTrigger className="bg-muted px-6 py-4 flex items-center justify-between font-medium">
+              <CollapsibleTrigger className="bg-muted px-6 py-3 flex items-center justify-between font-medium">
                 <span>{item.section.section}</span>
                 <ChevronDownIcon className="w-5 h-5" />
               </CollapsibleTrigger>
