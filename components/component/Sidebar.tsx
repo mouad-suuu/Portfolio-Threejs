@@ -136,7 +136,7 @@ const Sidebar = () => {
                   React
                 </Link>
                 <Link
-                  href="/NextJs"
+                  href="/Next.js"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -144,7 +144,7 @@ const Sidebar = () => {
                   Next.js
                 </Link>
                 <Link
-                  href="/nodeJs"
+                  href="/node.js"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >

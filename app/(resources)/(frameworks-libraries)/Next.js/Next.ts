@@ -357,38 +357,38 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Data Fetching",
+          section: "Data Fetching",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Server-side rendering (SSR)",
+                section: "Server-side rendering (SSR)",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Static site generation (SSG)",
+                section: "Static site generation (SSG)",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Incremental static regeneration (ISR)",
+                section: "Incremental static regeneration (ISR)",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Client-side fetching",
+                section: "Client-side fetching",
                 items: [],
               },
             },
@@ -398,38 +398,38 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "API Routes",
+          section: "API Routes",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Creating API routes",
+                section: "Creating API routes",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Handling HTTP methods (GET, POST, PUT, DELETE)",
+                section: "Handling HTTP methods (GET, POST, PUT, DELETE)",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "API middlewares",
+                section: "API middlewares",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Edge API routes",
+                section: "Edge API routes",
                 items: [],
               },
             },
@@ -439,30 +439,30 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "State Management",
+          section: "State Management",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Using React hooks with Next.js",
+                section: "Using React hooks with Next.js",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Server actions",
+                section: "Server actions",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Revalidating data",
+                section: "Revalidating data",
                 items: [],
               },
             },
@@ -478,30 +478,30 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Optimizations",
+          section: "Optimizations",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Image optimization",
+                section: "Image optimization",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Font optimization",
+                section: "Font optimization",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Script optimization",
+                section: "Script optimization",
                 items: [],
               },
             },
@@ -511,30 +511,30 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Styling in Next.js",
+          section: "Styling in Next.js",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "CSS Modules",
+                section: "CSS Modules",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Sass support",
+                section: "Sass support",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Tailwind CSS integration",
+                section: "Tailwind CSS integration",
                 items: [],
               },
             },
@@ -550,30 +550,31 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Authentication",
+          section: "Authentication",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle:
+                  "Implementing authentication (e.g., with NextAuth.js)",
+                section: "Implementing authentication (e.g., with NextAuth.js)",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Protecting routes",
+                section: "Protecting routes",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Managing sessions",
+                section: "Managing sessions",
                 items: [],
               },
             },
@@ -583,22 +584,23 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Database Integration",
+          section: "Database Integration",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle:
+                  "Connecting to databases (e.g., MongoDB, PostgreSQL)",
+                section: "Connecting to databases (e.g., MongoDB, PostgreSQL)",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "ORM usage (e.g., Prisma)",
+                section: "ORM usage (e.g., Prisma)",
                 items: [],
               },
             },
@@ -608,22 +610,25 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "CRUD Operations",
+          section: "CRUD Operations",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle:
+                  "Implementing Create, Read, Update, Delete operations",
+                section: "Implementing Create, Read, Update, Delete operations",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle:
+                  "Combining app and API routes for full-stack functionality",
+                section:
+                  "Combining app and API routes for full-stack functionality",
                 items: [],
               },
             },
