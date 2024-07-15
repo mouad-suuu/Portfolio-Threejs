@@ -644,38 +644,38 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Advanced Concepts",
+          section: "Advanced Concepts",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Middleware usage",
+                section: "Middleware usage",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Internationalization (i18n)",
+                section: "Internationalization (i18n)",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "SEO optimization",
+                section: "SEO optimization",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Web Assembly integration",
+                section: "Web Assembly integration",
                 items: [],
               },
             },
@@ -685,22 +685,22 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Performance Monitoring and Optimization",
+          section: "Performance Monitoring and Optimization",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Using built-in performance analytics",
+                section: "Using built-in performance analytics",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Optimizing for Core Web Vitals",
+                section: "Optimizing for Core Web Vitals",
                 items: [],
               },
             },
@@ -710,30 +710,30 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Security Best Practices",
+          section: "Security Best Practices",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "CSRF protection",
+                section: "CSRF protection",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "XSS prevention",
+                section: "XSS prevention",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Rate limiting",
+                section: "Rate limiting",
                 items: [],
               },
             },
@@ -749,30 +749,30 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Testing",
+          section: "Testing",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Unit testing with Jest",
+                section: "Unit testing with Jest",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Integration testing with React Testing Library",
+                section: "Integration testing with React Testing Library",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "End-to-end testing with Cypress",
+                section: "End-to-end testing with Cypress",
                 items: [],
               },
             },
@@ -782,22 +782,22 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Deployment",
+          section: "Deployment",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Deploying to Vercel",
+                section: "Deploying to Vercel",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Other deployment options",
+                section: "Other deployment options",
                 items: [],
               },
             },
@@ -813,30 +813,30 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Advanced Use Cases",
+          section: "Advanced Use Cases",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Real-time applications with WebSockets",
+                section: "Real-time applications with WebSockets",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Serverless functions",
+                section: "Serverless functions",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Integrating with external APIs",
+                section: "Integrating with external APIs",
                 items: [],
               },
             },
@@ -846,22 +846,22 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Troubleshooting and Debugging",
+          section: "Troubleshooting and Debugging",
           items: [
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Common issues and solutions",
+                section: "Common issues and solutions",
                 items: [],
               },
             },
             {
               type: "section",
               section: {
-                mainTitle: "",
-                section: "",
+                mainTitle: "Debugging techniques",
+                section: "Debugging techniques",
                 items: [],
               },
             },
@@ -877,32 +877,40 @@ export const data: DocumentationSection[] = [
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "CRUD component",
+          section: "CRUD component",
           items: [],
         },
       },
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Authentication HOC",
+          section: "Authentication HOC",
           items: [],
         },
       },
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Data fetching wrapper",
+          section: "Data fetching wrapper",
           items: [],
         },
       },
       {
         type: "section",
         section: {
-          mainTitle: "",
-          section: "",
+          mainTitle: "Form component with validation",
+          section: "Form component with validation",
+          items: [],
+        },
+      },
+      {
+        type: "section",
+        section: {
+          mainTitle: "Layout component",
+          section: "Layout component",
           items: [],
         },
       },
