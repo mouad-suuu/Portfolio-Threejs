@@ -75,7 +75,7 @@ const Sidebar = () => {
         <Collapsible className="grid gap-2">
           <CollapsibleTrigger className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground">
             <BookOpenIcon className="h-5 w-5" />
-            Resources{" "}
+            My Dev Library{" "}
             <ChevronRightIcon className="ml-auto h-5 w-5 transition-transform group-[data-state=open]:rotate-90" />
           </CollapsibleTrigger>
           <CollapsibleContent className="grid gap-2 pl-6">
@@ -87,7 +87,7 @@ const Sidebar = () => {
               </CollapsibleTrigger>
               <CollapsibleContent className="grid gap-2 pl-6">
                 <Link
-                  href="/resources/programming-languages/javascript"
+                  href="/javascript"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -95,7 +95,7 @@ const Sidebar = () => {
                   JavaScript
                 </Link>
                 <Link
-                  href="/resources/programming-languages/Typescript"
+                  href="/Typescript"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -103,7 +103,7 @@ const Sidebar = () => {
                   TypeScript
                 </Link>
                 <Link
-                  href="/resources/programming-languages/python"
+                  href="/python"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -111,7 +111,7 @@ const Sidebar = () => {
                   Python
                 </Link>
                 <Link
-                  href="/resources/programming-languages/java"
+                  href="/java"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -128,7 +128,7 @@ const Sidebar = () => {
               </CollapsibleTrigger>
               <CollapsibleContent className="grid gap-2 pl-6">
                 <Link
-                  href="/resources/frameworks-libraries/react"
+                  href="/react"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -136,7 +136,7 @@ const Sidebar = () => {
                   React
                 </Link>
                 <Link
-                  href="/resources/frameworks-libraries/NextJs"
+                  href="/NextJs"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -144,7 +144,7 @@ const Sidebar = () => {
                   Next.js
                 </Link>
                 <Link
-                  href="/resources/frameworks-libraries/nodeJs"
+                  href="/nodeJs"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -152,7 +152,7 @@ const Sidebar = () => {
                   Node.js
                 </Link>
                 <Link
-                  href="/resources/frameworks-libraries/express"
+                  href="/express"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -160,7 +160,7 @@ const Sidebar = () => {
                   Express
                 </Link>
                 <Link
-                  href="/resources/frameworks-libraries/django"
+                  href="/django"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -177,7 +177,7 @@ const Sidebar = () => {
               </CollapsibleTrigger>
               <CollapsibleContent className="grid gap-2 pl-6">
                 <Link
-                  href="/resources/tools-technologies/git"
+                  href="/git"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -185,7 +185,7 @@ const Sidebar = () => {
                   Git
                 </Link>
                 <Link
-                  href="/resources/tools-technologies/Docker"
+                  href="/Docker"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -193,7 +193,7 @@ const Sidebar = () => {
                   Docker
                 </Link>
                 <Link
-                  href="/resources/tools-technologies/AWS"
+                  href="/AWS"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
@@ -201,7 +201,7 @@ const Sidebar = () => {
                   AWS
                 </Link>
                 <Link
-                  href="/resources/tools-technologies/MongoDb"
+                  href="/MongoDb"
                   className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background hover:text-foreground"
                   prefetch={false}
                 >
