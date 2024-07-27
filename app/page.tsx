@@ -6,15 +6,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex-1 bg-background p-8 text-foreground md:p-12 lg:p-16">
+    <main className="flex-1 bg-background p-8 text-foreground md:p-12 lg:p-16 mt-12">
       <header className="mb-8 flex flex-col items-center gap-4 md:flex-row md:items-start">
-        <Image
-          src="/image1.png"
-          width={80}
-          height={80}
-          alt="Avatar"
-          className="Picture of the author"
-        />
         <div className="text-center md:text-left">
           <h1 className="text-3xl font-bold">Mouad Mennioui</h1>
           <p className="text-sm text-muted-foreground">Software Engineer</p>

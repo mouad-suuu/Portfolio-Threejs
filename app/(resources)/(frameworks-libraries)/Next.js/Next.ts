@@ -181,7 +181,159 @@ export const data: DocumentationSection[] = [
         section: {
           mainTitle: "Key features and improvements in version 14",
           section: "Key features and improvements in version 14",
-          items: [],
+          items: [
+            {
+              type: "paragraph",
+              text: "Next.js 14 introduced several key features and improvements. Here are the most significant ones with examples:",
+            },
+            {
+              type: "subtitle",
+              text: "1. Partial Prerendering (Beta)",
+            },
+            {
+              type: "paragraph",
+              text: "This feature allows for hybrid rendering, combining static and dynamic content.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `export default async function Page() {
+  return (
+    <>
+      <h1>Static content</h1>
+      <Suspense fallback={<p>Loading...</p>}>
+        <DynamicContent />
+      </Suspense>
+    </>
+  )
+}`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "2. Server Actions (Stable)",
+            },
+            {
+              type: "paragraph",
+              text: "Allows you to run asynchronous code directly on the server from the client.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `export default function Form() {
+  async function handleSubmit(formData) {
+    'use server'
+    // Server-side logic here
+  }
+  return <form action={handleSubmit}>...</form>
+}`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "3. Improved Metadata API",
+            },
+            {
+              type: "paragraph",
+              text: "Simplified API for adding metadata to your pages.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `export const metadata = {
+  title: 'My Page',
+  description: 'Page description',
+}
+
+export default function Page() {
+  return ...
+}`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "4. Turbopack (Beta) Improvements",
+            },
+            {
+              type: "paragraph",
+              text: "Faster compilation and better stability.",
+            },
+            {
+              type: "subtitle",
+              text: "5. Built-in SEO Support",
+            },
+            {
+              type: "paragraph",
+              text: "Enhanced tools for improving search engine optimization.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `import { NextSeo } from 'next-seo'
+
+export default function Page() {
+  return (
+    <>
+      <NextSeo
+        title="Page Title"
+        description="Page description"
+        canonical="https://www.example.com/page"
+        openGraph={{
+          url: 'https://www.example.com/page',
+          title: 'Open Graph Title',
+          description: 'Open Graph Description',
+          images: [
+            {
+              url: 'https://www.example.com/og-image.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+            },
+          ],
+        }}
+      />
+      <p>Page content</p>
+    </>
+  )
+}`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "6. Enhanced Image Component",
+            },
+            {
+              type: "paragraph",
+              text: "Improved performance and easier usage of the Next.js Image component.",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `import Image from 'next/image'
+
+export default function Page() {
+  return (
+    <Image
+      src="/profile.jpg"
+      width={500}
+      height={500}
+      alt="Profile picture"
+      priority
+    />
+  )
+}`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "These improvements aim to enhance performance, developer experience, and SEO capabilities in Next.js applications.",
+            },
+          ],
         },
       },
       {
@@ -189,7 +341,241 @@ export const data: DocumentationSection[] = [
         section: {
           mainTitle: "Comparison with previous versions",
           section: "Comparison with previous versions",
-          items: [],
+          items: [
+            {
+              type: "paragraph",
+              text: "Let's compare Next.js 14 with previous versions, focusing on key differences and improvements:",
+            },
+            {
+              type: "subtitle",
+              text: "1. Routing System",
+            },
+            {
+              type: "paragraph",
+              text: "Next.js 13 introduced the App Router, which became the default in version 14.",
+            },
+            {
+              type: "paragraph",
+              text: "Previous (Pages Router):",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `// pages/about.js
+export default function About() {
+  return <h1>About Page</h1>
+}`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "Next.js 14 (App Router):",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `// app/about/page.js
+export default function About() {
+  return <h1>About Page</h1>
+}`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "2. Data Fetching",
+            },
+            {
+              type: "paragraph",
+              text: "Previous (Pages Router):",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `// pages/posts.js
+export async function getServerSideProps() {
+  const res = await fetch('https://api.example.com/posts')
+  const posts = await res.json()
+  return { props: { posts } }
+}
+export default function Posts({ posts }) {
+  return (
+    <ul>
+      {posts.map(post => <li key={post.id}>{post.title}</li>)}
+    </ul>
+  )
+}`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "Next.js 14 (App Router):",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `// app/posts/page.js
+async function getPosts() {
+  const res = await fetch('https://api.example.com/posts')
+  return res.json()
+}
+export default async function Posts() {
+  const posts = await getPosts()
+  return (
+    <ul>
+      {posts.map(post => <li key={post.id}>{post.title}</li>)}
+    </ul>
+  )
+}`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "3. Server Components",
+            },
+            {
+              type: "paragraph",
+              text: "Next.js 13 introduced Server Components, which became more refined in version 14.",
+            },
+            {
+              type: "paragraph",
+              text: "Next.js 14:",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `// app/page.js
+async function getData() {
+  const res = await fetch('https://api.example.com/data')
+  return res.json()
+}
+export default async function Page() {
+  const data = await getData()
+  return <main>{data.content}</main>
+}`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "4. Metadata API",
+            },
+            {
+              type: "paragraph",
+              text: "Previous:",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `// pages/_app.js
+import Head from 'next/head'
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Head>
+        <title>My Website</title>
+        <meta name="description" content="Welcome to my website" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  )
+}`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "Next.js 14:",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `// app/layout.js
+export const metadata = {
+  title: 'My Website',
+  description: 'Welcome to my website',
+}
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
+}`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "5. Server Actions",
+            },
+            {
+              type: "paragraph",
+              text: "This feature was introduced in Next.js 13 and became stable in version 14.",
+            },
+            {
+              type: "paragraph",
+              text: "Next.js 14:",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `// app/form.js
+export default function Form() {
+  async function handleSubmit(formData) {
+    'use server'
+    const name = formData.get('name')
+    // Server-side logic here
+  }
+  return (
+    <form action={handleSubmit}>
+      <input type="text" name="name" />
+      <button type="submit">Submit</button>
+    </form>
+  )
+}`,
+              },
+            },
+            {
+              type: "subtitle",
+              text: "6. Partial Prerendering",
+            },
+            {
+              type: "paragraph",
+              text: "This is a new feature in Next.js 14, not available in previous versions.",
+            },
+            {
+              type: "paragraph",
+              text: "Next.js 14:",
+            },
+            {
+              type: "code",
+              code: {
+                language: "jsx",
+                code: `// app/page.js
+import { Suspense } from 'react'
+import Loading from './loading'
+export default function Page() {
+  return (
+    <>
+      <h1>Welcome to my site</h1>
+      <Suspense fallback={<Loading />}>
+        <DynamicContent />
+      </Suspense>
+    </>
+  )
+}`,
+              },
+            },
+            {
+              type: "paragraph",
+              text: "These examples demonstrate how Next.js 14 has evolved from its predecessors, offering more intuitive APIs, improved performance, and enhanced developer experience. The focus has shifted towards server-side rendering and server components, while also providing powerful tools for building dynamic and interactive applications.",
+            },
+          ],
         },
       },
       {
@@ -203,7 +589,293 @@ export const data: DocumentationSection[] = [
               section: {
                 mainTitle: "App directory structure",
                 section: "App directory structure",
-                items: [],
+                items: [
+                  {
+                    type: "paragraph",
+                    text: "The App Router introduced in Next.js 13 and refined in Next.js 14 uses a new directory structure that's more intuitive and powerful. Let's explore the App directory structure with examples:",
+                  },
+                  {
+                    type: "subtitle",
+                    text: "1. Root Layout",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "plaintext",
+                      code: `app/
+  layout.js`,
+                    },
+                  },
+                  {
+                    type: "paragraph",
+                    text: "This is the top-level layout that wraps all pages in your application.",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "jsx",
+                      code: `// app/layout.js
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
+}`,
+                    },
+                  },
+                  {
+                    type: "subtitle",
+                    text: "2. Pages",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "plaintext",
+                      code: `app/
+  page.js
+  about/
+    page.js
+  blog/
+    page.js`,
+                    },
+                  },
+                  {
+                    type: "paragraph",
+                    text: "Each `page.js` file represents a route in your application.",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "jsx",
+                      code: `// app/page.js
+export default function Home() {
+  return <h1>Welcome to the homepage</h1>
+}
+// app/about/page.js
+export default function About() {
+  return <h1>About Us</h1>
+}`,
+                    },
+                  },
+                  {
+                    type: "subtitle",
+                    text: "3. Nested Layouts",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "plaintext",
+                      code: `app/
+  layout.js
+  blog/
+    layout.js
+    page.js
+    [slug]/
+      page.js`,
+                    },
+                  },
+                  {
+                    type: "paragraph",
+                    text: "You can create nested layouts for specific sections of your app.",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "jsx",
+                      code: `// app/blog/layout.js
+export default function BlogLayout({ children }) {
+  return (
+    <div>
+      <nav>Blog Navigation</nav>
+      {children}
+    </div>
+  )
+}`,
+                    },
+                  },
+                  {
+                    type: "subtitle",
+                    text: "4. Dynamic Routes",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "plaintext",
+                      code: `app/
+  blog/
+    [slug]/
+      page.js`,
+                    },
+                  },
+                  {
+                    type: "paragraph",
+                    text: "Square brackets denote dynamic segments in the route.",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "jsx",
+                      code: `// app/blog/[slug]/page.js
+export default function BlogPost({ params }) {
+  return <h1>Blog Post: {params.slug}</h1>
+}`,
+                    },
+                  },
+                  {
+                    type: "subtitle",
+                    text: "5. Route Groups",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "plaintext",
+                      code: `app/
+  (marketing)/
+    about/
+      page.js
+    contact/
+      page.js
+  (shop)/
+    products/
+      page.js
+    cart/
+      page.js`,
+                    },
+                  },
+                  {
+                    type: "paragraph",
+                    text: "Parentheses create route groups, which don't affect the URL structure but allow for shared layouts.",
+                  },
+                  {
+                    type: "subtitle",
+                    text: "6. Loading UI",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "plaintext",
+                      code: `app/
+  blog/
+    loading.js
+    page.js`,
+                    },
+                  },
+                  {
+                    type: "paragraph",
+                    text: "Create loading.js files to show loading states.",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "jsx",
+                      code: `// app/blog/loading.js
+export default function Loading() {
+  return <p>Loading blog posts...</p>
+}`,
+                    },
+                  },
+                  {
+                    type: "subtitle",
+                    text: "7. Error Handling",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "plaintext",
+                      code: `app/
+  blog/
+    error.js
+    page.js`,
+                    },
+                  },
+                  {
+                    type: "paragraph",
+                    text: "Add error.js files to handle errors gracefully.",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "jsx",
+                      code: `// app/blog/error.js
+'use client'
+export default function Error({ error, reset }) {
+  return (
+    <div>
+      <h2>Something went wrong!</h2>
+      <button onClick={() => reset()}>Try again</button>
+    </div>
+  )
+}`,
+                    },
+                  },
+                  {
+                    type: "subtitle",
+                    text: "8. API Routes",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "plaintext",
+                      code: `app/
+  api/
+    route.js`,
+                    },
+                  },
+                  {
+                    type: "paragraph",
+                    text: "API routes are now created using route.js files.",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "jsx",
+                      code: `// app/api/hello/route.js
+export async function GET(request) {
+  return new Response('Hello, Next.js!')
+}`,
+                    },
+                  },
+                  {
+                    type: "subtitle",
+                    text: "9. Server Components (default) and Client Components",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "plaintext",
+                      code: `app/
+  components/
+    ServerComponent.js
+    ClientComponent.js`,
+                    },
+                  },
+                  {
+                    type: "paragraph",
+                    text: "All components are Server Components by default. Use the 'use client' directive for Client Components.",
+                  },
+                  {
+                    type: "code",
+                    code: {
+                      language: "jsx",
+                      code: `// app/components/ClientComponent.js
+'use client'
+import { useState } from 'react'
+export default function ClientComponent() {
+  const [count, setCount] = useState(0)
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  )
+}`,
+                    },
+                  },
+                  {
+                    type: "paragraph",
+                    text: "This structure allows for more intuitive routing, easier code organization, and better separation of concerns. It also provides built-in support for loading states, error handling, and nested layouts, making it easier to build complex applications with Next.js 14.",
+                  },
+                ],
               },
             },
             {

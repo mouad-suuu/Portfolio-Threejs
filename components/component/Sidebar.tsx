@@ -8,12 +8,7 @@ import {
   CollapsibleTrigger,
   CollapsibleContent,
 } from "@/components/ui/collapsible";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
+
 import { Button } from "@/components/ui/button";
 
 const Sidebar = () => {
@@ -25,23 +20,34 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="flex flex-col bg-muted p-6 text-muted-foreground md:w-64">
+    <div className="flex flex-col bg-muted p-2 text-muted-foreground md:w-64">
       <div className="flex flex-col items-center gap-4">
         <Link href="/">
-          <Image
-            src="/image1.png"
-            width={80}
-            height={80}
-            alt="Avatar"
-            className="Picture of the author"
-          />
+          <div
+            style={{
+              borderRadius: "50%",
+              overflow: "hidden",
+              width: "80px",
+              height: "80px",
+            }}
+          >
+            {" "}
+            <Image
+              src="/image.png"
+              width={80}
+              height={80}
+              alt="Avatar"
+              className="rounded-full"
+              objectFit="avatar"
+            />
+          </div>
         </Link>
         <div className="text-center">
           <h2 className="text-2xl font-bold">
             <Link href="/">Mouad Mennioui</Link>
           </h2>
           <p className="text-sm">Software Engineer</p>
-          <div className="mt-2 flex items-center gap-4">
+          <div className="mt-2 flex ml-12 items-center gap-4">
             <Link
               href="https://www.linkedin.com/in/mouad-mennioui-040477264/"
               className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -213,32 +219,6 @@ const Sidebar = () => {
           </CollapsibleContent>
         </Collapsible>
       </nav>
-      <div className="mt-auto">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full border w-8 h-8"
-            >
-              {isDarkMode ? (
-                <SunIcon className="h-5 w-5" />
-              ) : (
-                <MoonIcon className="h-5 w-5" />
-              )}
-              <span className="sr-only">Toggle dark mode</span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onSelect={() => setIsDarkMode(false)}>
-              Light Mode
-            </DropdownMenuItem>
-            <DropdownMenuItem onSelect={() => setIsDarkMode(true)}>
-              Dark Mode
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ import {
   CollapsibleContent,
 } from "@/components/ui/collapsible";
 
-interface DocumentationItem {
+export interface DocumentationItem {
   type:
     | "title"
     | "language"
@@ -49,7 +49,7 @@ const Documentation: React.FC<DocumentationProps> = ({
   };
 
   const renderItems = (items: DocumentationItem[]) => {
-    return items.map((item, itemIndex) => (
+    return items?.map((item, itemIndex) => (
       <div key={itemIndex} className="relative">
         {item.type === "title" && (
           <h1 className="text-2xl font-bold">{item.text}</h1>
