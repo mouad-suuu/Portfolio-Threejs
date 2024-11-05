@@ -213,7 +213,7 @@ export default function Home() {
             <ul className="list-disc pl-4">
               <li>Microservices</li>
               <li>Test unitaire</li>
-              <li>Test d'intégration</li>
+              <li>Test intégration</li>
               <li>Linux</li>
               <li>REST APIs</li>
               <li>Agile</li>
