@@ -2,10 +2,14 @@
 import { Component } from "@/components/component/component";
 import Link from "next/link";
 import Image from "next/image";
+import TypingAnimation from "@/components/TypingAnimation";
 
 export default function Home() {
   return (
     <main className="flex-1 bg-background p-8 text-foreground md:p-12 lg:p-16 mt-12">
+      <div>
+        <TypingAnimation text="Welcome to My Portfolio / Dev Library" />
+      </div>
       <header className="mb-8 flex flex-col items-center gap-4 md:flex-row md:items-start">
         <div className="text-center md:text-left">
           <h1 className="text-3xl font-bold">Mouad Mennioui</h1>
