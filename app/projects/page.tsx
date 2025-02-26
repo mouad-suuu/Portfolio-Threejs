@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Header from "@/components/component/Header";
 
 export default function Projects() {
   const projects = [
@@ -39,54 +41,63 @@ export default function Projects() {
   ];
 
   return (
-    <div className="p-8 md:p-12 lg:p-16 mt-12 max-w-[1500px]">
-      <h1 className="text-3xl font-bold mb-8">Projects</h1>
-      <div className="flex flex-col gap-16">
-        {projects.map((project) => (
-          <div key={project.title} className="group">
-            <h2 className="text-2xl font-bold">{project.title}</h2>
-            <div className="relative">
-              {project.video ? (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full rounded-lg object-cover h-[400px]"
-                >
-                  <source src={project.video} type="video/mp4" />
-                </video>
-              ) : (
-                <Image
-                  src={project.image!}
-                  alt={project.title}
-                  width={800}
-                  height={400}
-                  className="rounded-lg object-cover w-full h-full "
-                />
-              )}
-              <Link
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-center justify-center"
-              >
-                <span className="bg-background/80 text-foreground px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                  View Project
-                </span>
-              </Link>
-            </div>
-            <div className="mt-4">
-              <p className="mt-2 text-muted-foreground">
-                {project.description}
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                <span className="font-semibold">Tech:</span> {project.tech}
-              </p>
-            </div>
+    <>
+      <Header />
+      <main className="p-8 md:p-12 lg:p-16 pt-24">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            Projects
+          </h1>
+          <div className="grid gap-12">
+            {projects.map((project) => (
+              <div key={project.title} className="group">
+                <div className="flex flex-col lg:flex-row gap-8 bg-card rounded-lg p-8 shadow-lg">
+                  <div className="relative lg:w-2/3 h-[300px] lg:h-[400px] rounded-lg overflow-hidden">
+                    {project.video ? (
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      >
+                        <source src={project.video} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <Image
+                        src={project.image!}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    )}
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-center justify-center"
+                    >
+                      <span className="bg-background/80 text-foreground px-6 py-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                        View Project
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="lg:w-1/3 space-y-4">
+                    <h2 className="text-2xl font-bold">{project.title}</h2>
+                    <p className="text-muted-foreground whitespace-pre-line">
+                      {project.description}
+                    </p>
+                    <div>
+                      <h3 className="text-sm font-semibold mb-2">Technologies:</h3>
+                      <p className="text-sm text-muted-foreground">{project.tech}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      </main>
+    </>
   );
 }

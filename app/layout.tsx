@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Mouad Mennioui Portfolio",
     images: [
       {
-        url: "/og-image.png", // Add your Open Graph image
+        url: "/icon.png", // Add your Open Graph image
         width: 1200,
         height: 630,
         alt: "Mouad Mennioui - Full Stack Developer",
@@ -85,11 +85,7 @@ export default function RootLayout({
     <html>
       <body>
         <div className="flex h-screen overflow-hidden bg-background">
-          {/* Sidebar */}
-          <Sidebar />
-          {/* Main content */}
-          <main className="flex-1 overflow-y-auto focus:outline-none">
-            {/* Render children components */}
+          <main className="flex-1 overflow-y-auto focus:outline-none mt-12">
             {children}
           </main>
         </div>
