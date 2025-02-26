@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Header from "@/components/component/Header";
 
-export default function Projects() {
-  const projects = [
+export default function Certifications() {
+  const certifications = [
     {
       title: "Google Project Management (all 6 courses)",
       image: "/Google.jpeg",
@@ -19,7 +21,7 @@ export default function Projects() {
       link: "https://intranet.alxswe.com/certificates/Gp2rx8EZYB",
       description:
         "A rigorous 12-month software engineering program focused on back-end development, covering shell scripting, C programming, Python, SQL, JavaScript, and system design. The program emphasized hands-on projects like building a custom shell, AirBnB clone, and various algorithms.",
-      tech: "Shell, Git, C, Python, SQL, JavaScript, REST APIs, Data Structures, System Design ...",
+      tech: "Shell, Git, C, Python, SQL, JavaScript, REST APIs, Data Structures, System Design",
     },
     {
       title: "Learn Docker Course",
@@ -40,51 +42,58 @@ export default function Projects() {
     {
       title: "Learn JavaScript for Developers Course",
       image: "/bootdev_javascript.png",
-      link: "https://www.boot.dev/certificate/mouadme/2af5c197-21eb-48b4-bd90-b0d59adb311e",
+      link: "https://www.boot.dev/certificate/mouadme/2af5c197-21eb-48b4-bd90-b0d59a",
       description:
-        "An in-depth JavaScript course for developers, covering core concepts, ES6 features, and practical applications in back-end and front-end projects.",
-      tech: "JavaScript, ES6, Front-end Development, data structures, algorithms",
+        "A comprehensive JavaScript course designed for developers, covering advanced concepts, modern ES6+ features, and best practices in JavaScript development.",
+      tech: "JavaScript, ES6+, Modern JavaScript Features",
     },
   ];
 
   return (
-    <div className="p-8 md:p-12 lg:p-16 mt-12 max-w-[1500px]">
-      <h1 className="text-3xl font-bold mb-8">Certifications</h1>
-      <div className="flex flex-col gap-16">
-        {projects.map((project) => (
-          <div key={project.title} className="group">
-            <h2 className="text-2xl font-bold">{project.title}</h2>
-            <div className="relative">
-              <Image
-                src={project.image!}
-                alt={project.title}
-                width={800}
-                height={400}
-                className="rounded-lg object-cover w-full h-full "
-              />
+    <>
+      <Header />
+      <main className="p-8 md:p-12 lg:p-16 pt-24">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            Certifications
+          </h1>
+          <div className="grid gap-8 md:grid-cols-2">
+            {certifications.map((cert) => (
               <Link
-                href={project.link}
+                href={cert.link}
+                key={cert.title}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-center justify-center"
+                className="block group"
               >
-                <span className="bg-background/80 text-foreground px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                  View Project
-                </span>
+                <div className="bg-card rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl">
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src={cert.image}
+                      alt={cert.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <h2 className="text-xl font-bold line-clamp-2 group-hover:text-primary transition-colors">
+                      {cert.title}
+                    </h2>
+                    <p className="text-muted-foreground text-sm line-clamp-3">
+                      {cert.description}
+                    </p>
+                    <div className="pt-2">
+                      <p className="text-xs font-medium text-primary">
+                        Skills: {cert.tech}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </Link>
-            </div>
-            <div className="mt-4">
-              <p className="mt-2 text-muted-foreground">
-                {project.description}
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                <span className="font-semibold">Tech Studied:</span>{" "}
-                {project.tech}
-              </p>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      </main>
+    </>
   );
 }
