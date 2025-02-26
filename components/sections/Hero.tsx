@@ -66,24 +66,6 @@ export function Hero() {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      {/* Social Links - Vertical on Right */}
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4"
-      >
-        {socialLinks.map((social) => (
-          <ContactIcon
-            key={social.name}
-            href={social.href}
-            icon={social.icon}
-            text={social.text}
-            description={social.description}
-          />
-        ))}
-      </motion.div>
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           {/* Main Content - Centered */}
@@ -100,12 +82,25 @@ export function Hero() {
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
               Full Stack Developer Engineer
             </p>
+
+            {/* Quote */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-8"
+            >
+              <p className="text-2xl italic text-primary/90 font-serif">
+                "Code is the vessel; the unknown is the adventure."
+              </p>
+            </motion.div>
+
             <div className="text-lg text-muted-foreground mb-12 space-y-4 max-w-2xl mx-auto">
               <p>
                 Expert in{" "}
                 <span className="text-primary font-semibold">Node.js</span>{" "}
                 ecosystem with deep knowledge of frameworks like{" "}
-                <span className="text-primary font-semibold">Express.js</span>,{" "}
+                <span className="text-primary font-semibold">React.js</span>,{" "}
                 <span className="text-primary font-semibold">Next.js</span>, and{" "}
                 <span className="text-primary font-semibold">NestJS</span>.
               </p>
@@ -147,6 +142,24 @@ export function Hero() {
               </div>
             </motion.div>
 
+            {/* Social Links - Horizontal in Hero Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-wrap justify-center gap-4 mb-12"
+            >
+              {socialLinks.map((social) => (
+                <ContactIcon
+                  key={social.name}
+                  href={social.href}
+                  icon={social.icon}
+                  text={social.text}
+                  description={social.description}
+                />
+              ))}
+            </motion.div>
+
             {/* Available for Work Banner */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -178,13 +191,21 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
-          className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center p-1"
+          className="text-primary"
         >
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-1 h-1 bg-primary rounded-full"
-          />
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
         </motion.div>
       </motion.div>
     </section>
