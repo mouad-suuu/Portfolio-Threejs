@@ -8,7 +8,7 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <div className="flex h-screen overflow-hidden bg-background">
+        <div className="flex h-screen overflow-hidden bg-background mt-12">
           {/* Sidebar */}
           <Sidebar />
           {/* Main content */}
