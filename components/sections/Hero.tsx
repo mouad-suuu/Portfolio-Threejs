@@ -91,7 +91,7 @@ export function Hero() {
               className="mb-8"
             >
               <p className="text-2xl italic text-primary/90 font-serif">
-                "Code is the vessel; the unknown is the adventure."
+                &quot;Code is the vessel; the unknown is the adventure.&quot;
               </p>
             </motion.div>
 
@@ -193,18 +193,18 @@ export function Hero() {
           transition={{ repeat: Infinity, duration: 1.5 }}
           className="text-primary"
         >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <path d="M12 5v14M5 12l7 7 7-7"/>
+            <path d="M12 5v14M5 12l7 7 7-7" />
           </svg>
         </motion.div>
       </motion.div>
