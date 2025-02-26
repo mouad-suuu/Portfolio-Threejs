@@ -100,7 +100,8 @@ export async function GET(req: Request) {
             Code Library
           </h1>
           <p className="text-muted-foreground mb-12 max-w-2xl">
-            A collection of reusable code patterns, utilities, and best practices that I've gathered throughout my development journey.
+            A collection of reusable code patterns, utilities, and best
+            practices that I have gathered throughout my development journey.
             Feel free to use these patterns in your own projects!
           </p>
 
@@ -117,7 +118,9 @@ export async function GET(req: Request) {
                       className="bg-card rounded-lg p-6 shadow-lg space-y-4"
                     >
                       <h3 className="text-xl font-semibold">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.description}</p>
+                      <p className="text-muted-foreground">
+                        {item.description}
+                      </p>
                       <pre className="bg-muted p-4 rounded-md overflow-x-auto">
                         <code className="text-sm">{item.code}</code>
                       </pre>

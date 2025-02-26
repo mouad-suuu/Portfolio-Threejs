@@ -83,7 +83,7 @@ export function Contact() {
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className="text-lg text-muted-foreground mb-12">
             Feel free to reach out for collaborations, opportunities, or just a
