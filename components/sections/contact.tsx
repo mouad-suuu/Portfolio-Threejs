@@ -73,7 +73,7 @@ export function Contact() {
   ];
 
   return (
-    <section className="py-20 bg-card/50">
+    <section className="py-20 bg-black text-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -85,7 +85,7 @@ export function Contact() {
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Let&apos;s Connect
           </h2>
-          <p className="text-lg text-muted-foreground mb-12">
+          <p className="text-lg text-gray-300 mb-12">
             Feel free to reach out for collaborations, opportunities, or just a
             friendly hello
           </p>
